@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
+<style>
+
+body {
+  margin: 2;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("/static/photograph.jpg");
+  background-color: #cccccc;
+  height: 1000px;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.center_div{
+    margin: 0 auto;
+    width:80% /* value of your choice which suits your alignment */
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+</style>
+<title>Fake News Detector</title>
+</head>
+<body>
+<h1 style="text-align:center; font-size:50px; font-family:cursive;"> <strong>FAKE NEWS DETECTOR</strong></h1>
+<p style="text-align:center; font-size:20px; font-family:cursive;"> <strong><i>Keeping Your News True Since 2021</i></strong> </p>
+
+<div class="container center_div">
+<form action="#" method="post">
+    <div class="form-group row">
+		<div class="col-xs-4">
+			<label for="NewsTitle" style="font-size:20px;">Article Heading</label>
+			<input type="text" class="form-control" id="NewsTitle" placeholder="Title of the News Article" name="Heading">
+		</div>
+
+	</div>
+
+	<div class="form-group row">
+		<div class="col-xs-4">
+			<label for="AricleContent" style="font-size:20px;">Contents</label>
+			<textarea class="form-control" id="ArticleContent" rows="6" placeholder="Contents of the Article" name="material"></textarea>
+		</div>
+		
+	</div>
+	<div class="form-group row">
+		<div class="col-xs-2">
+			<button type="submit" class="btn btn-primary btn-lg btn-block">Validate</button>
+		 </div>
+		 <div class="col-xs-2">
+			{% if result %}
+				{% if result == 1 %}
+					<i class="fas fa-check-square fa-3x amber-text pr-3" aria-hidden="true" style="color:green";"></i>
+					<p style="font-size:20px; color:green"><b>Information is Credible</b></p>
+				{% else %}
+					<i class="fas fa-times-circle fa-3x amber-text pr-3" aria-hidden="true" style="color:#B71C1C;"></i>
+					<p style="font-size:20px; color:#B71C1C;"><b>Fake News!!</b></p>
+				{% endif %}
+			{% endif %}
+				
+		</div>
+	 </div>
+	</form> 
+</div>
+<!-- Footer -->
+<div class = "footer">
+<footer class="bg-light text-lg-start">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!--Grid row-->
+    <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase" style="color:black;"><b>About Us</b></h5>
+
+        <p style="color:black;">
+         Increasing misinformation among people is simple no longer something people can tolerate. Thus, Fake News Detector will
+		 analyze the cotents of your news and run it against our pretrained Machine Learning Model and will help you decide if you
+		 should trust your source
+        </p>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase" style="color:black;"><b>Contact Us</b></h5>
+
+        <ul class="list-unstyled mb-0">
+          <li>
+            <a href="#!" class="text-dark">notactualemail@fakenews.org</a>
+          </li>
+          <li>
+            <a href="#!" class="text-dark">thisisnotreal@fakenews.com</a>
+          </li>
+          <li>
+            <a href="#!" class="text-dark">www.notrealnews.com</a>
+          </li>
+          <li>
+            <a href="#!" class="text-dark">01-9722551401</a>
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase mb-0" style="color:black;"><b>References</b></h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!" class="text-dark">www.bootstrap.com</a>
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+    </div>
+    <!--Grid row-->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">Fake News Detection Team</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+  
+</div>
+</body>
+</html>
